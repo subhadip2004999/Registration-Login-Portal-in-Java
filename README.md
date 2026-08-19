@@ -7,16 +7,16 @@ A simple Registration and Login portal implemented in Java with HTML front-end p
 ## Website Preview
 
 ### Welcome Page
-![Welcome to My Portal](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/welcome-page.png)
+![Welcome to My Portal]([https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/welcome-page.png](https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/blob/b88987578c457461bb35d2da4006c6740c249dcc/images/Screenshot%20(5).png))
 
 ### Login Page
-![Welcome Back - Login](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/login-page.png)
+![Welcome Back - Login]([https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/login-page.png](https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/blob/b88987578c457461bb35d2da4006c6740c249dcc/images/Screenshot%20(6).png))
 
 ### Registration Page
-![Create an Account](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/registration-page.png)
+![Create an Account]([https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/registration-page.png](https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/blob/b88987578c457461bb35d2da4006c6740c249dcc/images/Screenshot%20(7).png))
 
 ### Profile Dashboard
-![Profile Overview](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/dashboard-page.png)
+![Profile Overview]([https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/dashboard-page.png](https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/blob/b88987578c457461bb35d2da4006c6740c249dcc/images/Screenshot%20(8).png))
 
 ## Repository structure
 
