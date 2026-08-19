@@ -55,9 +55,9 @@ public class Register extends HttpServlet {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			String sqlURL = "jdbc:mysql://localhost:3306/MyPortal";
-			String sqlUsername = "root";
-			String sqlPassword = "S12345s@";
+			String sqlURL = "jdbc:mysql://url";
+			String sqlUsername = "username";
+			String sqlPassword = "password";
 
 			Connection con = DriverManager.getConnection(sqlURL, sqlUsername, sqlPassword);
 			
