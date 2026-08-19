@@ -50,9 +50,9 @@ Note: The code in this repository expects a database named `MyPortal` and a tabl
 
 The database connection is currently configured in the servlets (for example, `Login.java` and `Delete.java`) with these values:
 
-- URL: `jdbc:mysql://localhost:3306/MyPortal`
-- Username: `root`
-- Password: `S12345s@`
+- URL: the jdbc url
+- Username: your username
+- Password: your password
 
 For production or shared projects, avoid hard-coding credentials. Instead, consider using one of the following approaches:
 
