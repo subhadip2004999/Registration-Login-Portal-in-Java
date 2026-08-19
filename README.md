@@ -7,21 +7,22 @@ A simple Registration and Login portal implemented in Java with HTML front-end p
 ## Website Preview
 
 ### Welcome Page
-![Welcome to My Portal](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/assets/image1.png)
+![Welcome to My Portal](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/welcome-page.png)
 
 ### Login Page
-![Welcome Back - Login](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/assets/image2.png)
+![Welcome Back - Login](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/login-page.png)
 
 ### Registration Page
-![Create an Account](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/assets/image3.png)
+![Create an Account](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/registration-page.png)
 
 ### Profile Dashboard
-![Profile Overview](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/assets/image4.png)
+![Profile Overview](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/images/dashboard-page.png)
 
 ## Repository structure
 
 - src/ — Java servlet source code (package: `myPackage`)
 - Web pages (HTML / JSP) — front-end views
+- images/ — Application screenshots and UI preview
 - .classpath, .project, .settings — IDE project files (Eclipse)
 
 The repository is primarily Java (≈81.5%) with HTML markup (≈18.5%).
