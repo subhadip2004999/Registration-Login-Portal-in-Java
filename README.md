@@ -163,8 +163,8 @@ If the error persists, capture logs from Tomcat/Render and open an issue includi
 
 If you need help or want to report a bug:
 
+- Email: businesssubhadip4@gmail.com
 - Open an issue in this repository: https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/issues
-- Email: subhadipbiswas2004@gmail.com
 
 When opening an issue, please include:
 - Steps to reproduce
