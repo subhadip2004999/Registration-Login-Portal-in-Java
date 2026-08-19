@@ -13,7 +13,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 /**
- * Servlet implementation class Register
  */
 @WebServlet("/Register")
 public class Register extends HttpServlet {
@@ -43,6 +42,7 @@ public class Register extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String usrEmail = request.getParameter("email1");
 		String usrName = request.getParameter("name1");
 		String usrGender = request.getParameter("gender1");
@@ -60,7 +60,7 @@ public class Register extends HttpServlet {
 			String sqlPassword = "S12345s@";
 
 			Connection con = DriverManager.getConnection(sqlURL, sqlUsername, sqlPassword);
-
+			
 			PreparedStatement ps = con.prepareStatement("insert into register values(?,?,?,?,?,?)");
 
 			ps.setString(1, usrEmail);
@@ -75,23 +75,24 @@ public class Register extends HttpServlet {
 			if (result > 0) {
 
 				response.setContentType("text/html");
-				out.print("<h2 style='color:green','text-align:center;'> Registered Successfully </h2>");
+				out.print("<h2 style='color:green'>Success    </h2>");
 				RequestDispatcher rd = request.getRequestDispatcher("indexLogin.jsp");
 				rd.include(request, response);
 			}
 
 			else {
 				response.setContentType("text/html");
-				out.print("<h2 style='color:red','text-align:center;'> Please Try Again </h2>");
+				out.print("<h2 style='color:red'>Try Again    </h2>");
 				RequestDispatcher rd = request.getRequestDispatcher("indexRegister.jsp");
 				rd.include(request, response);
 
 			}
+		
 
 		} catch (Exception e) {
 
 			response.setContentType("text/html");
-			out.print("<h2 style='color:red','text-align:center;'> Please Try Again </h2>");
+			out.print("<h2 style='color:red'>Try Again     </h2>");
 			RequestDispatcher rd = request.getRequestDispatcher("indexRegister.jsp");
 			rd.include(request, response);
 		}
