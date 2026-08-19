@@ -7,16 +7,16 @@ A simple Registration and Login portal implemented in Java with HTML front-end p
 ## Website Preview
 
 ### Welcome Page
-![Welcome to My Portal](https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/raw/main/assets/image1.png)
+![Welcome to My Portal](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/assets/image1.png)
 
 ### Login Page
-![Welcome Back - Login](https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/raw/main/assets/image2.png)
+![Welcome Back - Login](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/assets/image2.png)
 
 ### Registration Page
-![Create an Account](https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/raw/main/assets/image3.png)
+![Create an Account](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/assets/image3.png)
 
 ### Profile Dashboard
-![Profile Overview](https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/raw/main/assets/image4.png)
+![Profile Overview](https://raw.githubusercontent.com/subhadip2004999/Registration-Login-Portal-in-Java/main/assets/image4.png)
 
 ## Repository structure
 
@@ -36,7 +36,7 @@ The repository is primarily Java (≈81.5%) with HTML markup (≈18.5%).
 
 ## Database
 
-This application uses **Supabase** (a PostgreSQL-based backend service) as the database, which is publicly available. Database credentials and connection details are securely configured in the application.
+This application uses **Supabase** (a PostgreSQL-based backend service) as the database, which is publicly available. Database credentials and connection details are securely configured in the app.
 
 - **Database Service:** Supabase (PostgreSQL)
 - **Status:** Publicly available
