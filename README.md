@@ -1,6 +1,6 @@
 # Registration Login Portal (Java)
 
-A simple Registration and Login portal implemented in Java with HTML front-end pages. This project demonstrates basic user registration, login, session handling, and account deletion using servlets.
+A simple Registration and Login portal implemented in Java with HTML front-end pages. This project demonstrates basic user registration, login, session handling, and account deletion using servlets and a PostgreSQL (Supabase) backend.
 
 **🌐 Live Website:** https://myportal-image-latest.onrender.com
 
@@ -18,52 +18,58 @@ A simple Registration and Login portal implemented in Java with HTML front-end p
 ### Profile Dashboard
 ![Profile Overview](https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/blob/b88987578c457461bb35d2da4006c6740c249dcc/images/Screenshot%20(8).png)
 
-## Repository structure
+## Quick overview
+
+- Primary languages: Java (~81.5%), HTML (~18.5%)
+- Features: user registration, login with session handling, account deletion, basic form validation, responsive UI
+
+## Requirements
+
+Before you build or run this project, make sure you have the following installed and available:
+
+- Java Development Kit (JDK) 8 or newer
+- A servlet container (Apache Tomcat 9+, Jetty, or similar)
+- Supabase account (or any PostgreSQL-compatible database)
+- PostgreSQL JDBC driver (add to `WEB-INF/lib/` or configure via your build tool)
+- (Optional) IDE: Eclipse, IntelliJ IDEA, or similar
+- (Optional) Git for cloning the repository
+
+Notes:
+- For production deployments, set database credentials as environment variables rather than hard-coding them.
+- If deploying to a platform like Render/Heroku, ensure the platform variables are configured in the service dashboard.
+
+## Project structure
+
+A short, organized view of the repository layout and where things live:
 
 - src/ — Java servlet source code (package: `myPackage`)
-- Web pages (HTML / JSP) — front-end views
-- images/ — Application screenshots and UI preview
-- .classpath, .project, .settings — IDE project files (Eclipse)
+  - contains servlets that handle registration, login, profile, and deletion logic
+- Web pages (HTML / JSP) — front-end views shown to users
+  - welcome, register, login, profile, etc.
+- WEB-INF/ — web application configuration
+  - web.xml (servlet mappings) and `lib/` for JDBC drivers
+- images/ — application screenshots and UI preview
+- .classpath, .project, .settings — Eclipse project files (IDE-specific)
 
-The repository is primarily Java (≈81.5%) with HTML markup (≈18.5%).
+Suggested tree (example):
 
-## Features
-
-- User registration with validation
-- User login with session creation
-- Account deletion
-- Simple form validation and user flow (register → login → welcome)
-- Responsive UI with modern design
+```
+Registration-Login-Portal-in-Java/
+├─ src/                    # Java servlet source files
+├─ WebContent/             # HTML / JSP / CSS / JS assets
+│  ├─ index.html
+│  ├─ register.html
+│  └─ login.html
+├─ WEB-INF/
+│  ├─ web.xml
+│  └─ lib/                 # add PostgreSQL JDBC jar here
+├─ images/
+└─ README.md
+```
 
 ## Database
 
-This application uses **Supabase** (a PostgreSQL-based backend service) as the database, which is publicly available. Database credentials and connection details are securely configured in the app.
-
-- **Database Service:** Supabase (PostgreSQL)
-- **Status:** Publicly available
-- **Table:** `register` with columns: `id`, `Name`, `Email`, `Password`, `Gender`, `Mobile`, `City`
-
-## Workflow
-
-The user interaction workflow follows these steps:
-
-1. **User arrives at the portal** → Lands on the welcome page with two options: "Log In" or "Register"
-2. **New User (Register)** → Fills registration form with personal details (Name, Email, Mobile, Gender, City, Password) → Account is created in the database
-3. **Existing User (Login)** → Enters email and password → System validates credentials against the database → Session is created upon successful login
-4. **Dashboard** → User views their profile information and can log out or delete their account
-5. **Account Deletion** → User account and associated data are removed from the database
-
-## Prerequisites
-
-- Java Development Kit (JDK) 8 or newer
-- A servlet container such as Apache Tomcat (9+ recommended)
-- Supabase account with database configured
-- PostgreSQL JDBC driver on the server's classpath or added to the project
-- An IDE such as Eclipse or IntelliJ IDEA (optional)
-
-## Database setup
-
-The `register` table in Supabase should have the following structure:
+This application uses Supabase (PostgreSQL) as the database. The main table used by the app is `register` with the following structure:
 
 ```sql
 CREATE TABLE register (
@@ -78,20 +84,14 @@ CREATE TABLE register (
 );
 ```
 
-## Configuration
+Configuration details (set these according to your Supabase or PostgreSQL instance):
 
-The database connection is configured using Supabase credentials:
+- Host: Your Supabase PostgreSQL host
+- Database: Your Supabase project database name
+- Username: Your Supabase database user
+- Password: Your Supabase database password
 
-- **Host:** Your Supabase PostgreSQL host
-- **Database:** Your Supabase project database name
-- **Username:** Your Supabase database user
-- **Password:** Your Supabase database password
-
-For production or shared projects, use one of the following approaches:
-
-- Move DB credentials to a configuration file (properties file) and load them at runtime.
-- Use environment variables provided by the servlet container or deployment platform (e.g., Render, Heroku).
-- Use connection pooling (e.g., Apache DBCP or HikariCP) for better performance.
+For production use, store credentials in environment variables or a secure configuration store and use a connection pool (HikariCP, Apache DBCP) for better performance.
 
 ## Build & Run
 
@@ -104,46 +104,79 @@ For production or shared projects, use one of the following approaches:
 
 2. Import the project into your IDE (Eclipse: File → Import → Existing Projects into Workspace) or build with your preferred build tool.
 
-3. Add PostgreSQL JDBC driver to your project (add to `WEB-INF/lib/` or configure in your build tool).
+3. Add the PostgreSQL JDBC driver to your project (place the jar in `WEB-INF/lib/` or declare it in your build tool).
 
-4. Configure your Supabase database credentials in the application (update connection parameters in the servlet files or configuration files).
+4. Configure your database credentials in the application (update connection parameters in the servlet files or configuration files) or provide them as environment variables in your servlet container.
 
-5. Deploy the project to a servlet container (Tomcat/Jetty) as a WAR or run it from your IDE's server configuration.
+5. Deploy the project to a servlet container (Tomcat/Jetty) as a WAR or run from your IDE's server configuration.
 
-6. Open the application in a browser and use the provided HTML/JSP pages to register and login.
+6. Open the application in a browser and use the HTML/JSP pages to register and login.
 
-7. For live deployment (like on Render), ensure environment variables are set for database credentials.
+7. For cloud deployment (e.g., Render), set the environment variables for DB credentials in the platform dashboard and deploy as a web service.
 
-## Deployment
+## Troubleshooting
 
-The application is currently deployed and running at: **https://myportal-image-latest.onrender.com**
+If you run into issues, try these common fixes:
 
-### Deployment Steps (Render.com)
-1. Push your code to GitHub
-2. Connect your GitHub repository to Render
-3. Set environment variables for Supabase credentials in Render dashboard
-4. Deploy as a web service
-5. Access your live application via the Render URL
+- Database connection errors (e.g., "Connection refused", "FATAL: password authentication failed")
+  - Verify host, port, database name, username, and password.
+  - Ensure the PostgreSQL / Supabase instance allows external connections from your host or platform.
+  - Confirm the PostgreSQL JDBC driver is present in `WEB-INF/lib/`.
+
+- Driver ClassNotFoundException
+  - Add the correct PostgreSQL JDBC driver jar to the webapp's classpath (WEB-INF/lib).
+
+- 404 / servlet mapping errors
+  - Confirm `web.xml` contains correct servlet and URL mapping entries, and that files are deployed to the expected paths.
+
+- Session not persisting
+  - Make sure cookies are enabled in the browser and the servlet container is correctly configured to manage sessions.
+
+- Password not matching / hashing issues
+  - If you switch to hashed passwords, ensure your login flow verifies using the same hashing algorithm (e.g., BCrypt).
+
+- Deployment failures on Render/Heroku
+  - Check build logs and set required environment variables (DB credentials). Ensure the buildpack or container supports a servlet container.
+
+If the error persists, capture logs from Tomcat/Render and open an issue including: steps to reproduce, Java/Tomcat versions, relevant log excerpts, and any stack traces.
 
 ## Security notes & improvements
 
-- Passwords are stored securely and should use proper hashing (e.g., bcrypt, Argon2).
-- All user input is validated and sanitized to prevent SQL injection and XSS attacks.
-- Database credentials are stored in environment variables, not hard-coded.
-- Consider implementing:
-  - Two-factor authentication (2FA)
-  - Email verification for new accounts
+- Passwords should be stored using a strong hashing algorithm (bcrypt, Argon2) rather than plain text.
+- Sanitize and validate all user input to prevent SQL injection and XSS attacks.
+- Use HTTPS in production and configure secure cookies.
+- Consider adding:
+  - Email verification
   - Password reset functionality
-  - HTTPS enforcement
-  - CSRF token protection
+  - Two-factor authentication (2FA)
+  - CSRF protection
 
-## Tests
+## Troubleshooting checklist (quick)
 
-No automated tests are included. You can add unit and integration tests (JUnit, Mockito) under a `test/` directory and a CI configuration if desired.
+- Is the DB reachable and credentials correct?
+- Is the JDBC driver present in WEB-INF/lib?
+- Are servlet mappings correct in web.xml?
+- Are environment variables set for the deployment platform?
+- Are logs (Tomcat/Render) showing a clear error? Copy them when filing an issue.
+
+## Contact & support
+
+If you need help or want to report a bug:
+
+- Open an issue in this repository: https://github.com/subhadip2004999/Registration-Login-Portal-in-Java/issues
+- Email: subhadipbiswas2004@gmail.com
+
+When opening an issue, please include:
+- Steps to reproduce
+- Java and servlet container versions (e.g., Java 11, Tomcat 9)
+- Relevant log output or stack traces
+- Any configuration or environment details
+
+For commercial support or integration help, reach out to the email above.
 
 ## Contributing
 
-Contributions are welcome. Please open issues for bugs or feature requests and submit pull requests for proposed changes.
+Contributions are welcome. Please open issues for bugs or feature requests and submit pull requests for proposed changes. Add unit and integration tests (JUnit, Mockito) under a `test/` directory where appropriate.
 
 ## License
 
